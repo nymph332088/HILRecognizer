@@ -11,13 +11,15 @@ To run the code, the following environment is required:
 
 # Run 5 fold cross validation. 
 The 5-fold cross validation is used to select the best hyperparameters based on the weaklly labelled data, via ``random search`` technique. 
-After the 5 fold cross validation, the best hyperparameter ``XX.pkl`` is output to the ``experimentas/kaggle`` folder.
+After the 5 fold cross validation, the best hyperparameter ``XX.pkl`` is output to the ``outfolder`` folder.
 
 ``
-CUDA_VISIBLE_DEVICES="$dev" python s_train_bilstm_tagger.py --data data/position/testKaggleAll.csv \
---save experiments/position/kaggle_bound/pretrain \
---params experiments/position/kaggle_bound/loo_R.E.tag_best_args.pkl \
---epochs 5 --cuda --batch-size 512 --tags o y --max_len 104 --label R.E.tag --run pretrain``
+outfolder="experiments/position/kaggle_bound/pretrain"
+CUDA_VISIBLE_DEVICES="$dev" python s_train_bilstm_tagger.py --data data/position/testKaggle2.csv \
+--save "$outfolder" --pooling max --partition loo --epochs 5 --cuda --batch-size 512 \
+--tags o y --max_len 104 --label R.E.tag.gr6
+``
+
 
 # Pretrain on weakly labelled data
 
