@@ -1,10 +1,7 @@
 # HILRecognizer
-Code to reproduce results of KDD 2019
-
-
 # Get Started
 
-HILRecognizer contains code and datasets for KDD 2019 paper:
+HILRecognizer contains code and datasets for KDD 2019 submission:
 
 * **Zhang, S., He, L., Vucetic, S., Dragut, E., Human-in-the-loop ML Systems for Entity Extraction, KDD, 2019**
 
