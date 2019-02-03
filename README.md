@@ -29,13 +29,13 @@ CUDA_VISIBLE_DEVICES="$dev" python s_train_bilstm_tagger.py --data data/position
 --epochs 5 --cuda --batch-size 512 --tags o y --max_len 104 --label R.E.tag --run pretrain``
 
 # Fine-tuninig pre-trained model with active learning
-``
-aliter=50 # active learning iterations
+``aliter=50 # active learning iterations
 albs=20   # active learning batch size
 epoch=10  # active learning epochs
 best_args="loo_R.E.tag_best_args.pkl"   # best args of pretrained model
 pretrain= "R.E.tag_testKaggleAll_pretrain_5.pt"   # pretrained model
 outfolder="active_learning_cv_by_outlet_retag_pt5" # output folder
+
 CUDA_VISIBLE_DEVICES="$dev" python s_train_bilstm_tagger.py --data data/position/testKaggle2.csv \
 --save experiments/position/kaggle_bound/"$outfolder"/ \
 --params experiments/position/kaggle_bound/"$best_args" \
